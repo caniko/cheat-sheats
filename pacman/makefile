@@ -2,7 +2,7 @@
 BASE=ungoogled-chromium  element-desktop-nightly-bin  qbittorrent-enhanced-git
 
 CODE=codium  jq  ninja  cmake
-DEVOPS=terraform  kubectl  kubectx  docker  go
+DEVOPS=terraform  kubectl  kubectx  docker  go  fuse-overlayfs
 PYTHON=pyenv  zlib  xz  tk  openssl  python-pipx  pycharm-professional  python-black  python-aiohttp  python-isort  python-pandas
 FLUTTER=flutter  dart  android-sdk
 
@@ -12,6 +12,7 @@ GAMING=lutris-git  wine-ge-custom  proton-ge-custom  steam-native-runtime  heroi
 AUTHOR_PERSONAL=via  it87-dkms-git
 
 # post-pacman components
+DEVOPS_SETUP=sudo usermod -aG docker ${USER}  &&  printf "{\n  "storage-driver": "overlay2"\n}" | sudo tee /etc/docker/daemon.json
 FLUTTER_SETUP=git config --global --add safe.directory /opt/flutter  &&  sudo usermod -aG flutterusers ${USER}
 PYTHON_SETUP=pipx install poetry
 PERSONAL_SETUP=echo it87 | sudo tee /etc/modules-load.d/it87.conf

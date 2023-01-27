@@ -1,3 +1,13 @@
+# Computational neuroscience ArchLinux setup
+
+## Ideals
+Provide scripts that will allow any neuroscientist, and hopefully other STEM fields the tools they need to quickly get to work.
+
+### Motivation
+Get more computational neuroscientists to switch away from Debian-based solutions to try other flavours of Linux. My journey started with ArchLinux, and I am hoping documenting it will help those the come after me!
+
+## make commands
+
 ### Full
 Includes everything including my own selection of installations
 
@@ -12,3 +22,7 @@ Everything I use to develop and deploy my distrubuted applications.
 
 ### Gaming: Try to run your games in
 Steam + Heroic-Launcher first, and if that doesn't work, try Lutris
+
+## Issues?
+Are very welcome!
+
