@@ -1,5 +1,5 @@
 # pacman components
-BASE=ungoogled-chromium  element-desktop-nightly-bin  qbittorrent-enhanced-git
+BASE=ungoogled-chromium  element-desktop-nightly-bin  qbittorrent-enhanced-git  octopi-git  fancontrol-gui
 
 CODE=codium  jq  ninja  cmake
 DEVOPS=terraform  kubectl  kubectx  docker  go  fuse-overlayfs
@@ -12,6 +12,7 @@ GAMING=lutris-git  wine-ge-custom  proton-ge-custom  steam-native-runtime  heroi
 AUTHOR_PERSONAL=via  it87-dkms-git
 
 # post-pacman components
+CHAOTIC_AUR_SETUP=sh add_chaotic_aur.sh
 DEVOPS_SETUP=sudo usermod -aG docker ${USER}  &&  printf "{\n  "storage-driver": "overlay2"\n}" | sudo tee /etc/docker/daemon.json
 FLUTTER_SETUP=git config --global --add safe.directory /opt/flutter  &&  sudo usermod -aG flutterusers ${USER}
 PYTHON_SETUP=pipx install poetry
@@ -40,3 +41,6 @@ py:
 
 gamer:
 	sudo pacman -Sy --needed $(BASE) $(GAMING)
+
+chaotic:
+	$(CHAOTIC_AUR_SETUP)

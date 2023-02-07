@@ -1,5 +1,12 @@
 # Computational neuroscience ArchLinux setup
 
+## Important for non-Garuda users
+You have to add `chaotic-aur` to your `pacman.conf`, either refer to the [online recipe](https://aur.chaotic.cx/), or use the bundled make command:
+
+```shell
+make chaotic
+```
+
 ## Ideals
 Provide scripts that will allow any neuroscientist, and hopefully other STEM fields the tools they need to quickly get to work.
 
