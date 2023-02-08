@@ -1,7 +1,8 @@
 # pacman components
 BASE=ungoogled-chromium  element-desktop-nightly-bin  qbittorrent-enhanced-git  octopi-git  fancontrol-gui
+PC_HOBY=via
 
-CODE=codium  jq  ninja  cmake
+CODE=codium  jq  ninja  cmake  openapi-generator
 DEVOPS=terraform  kubectl  kubectx  docker  go  fuse-overlayfs
 PYTHON=pyenv  zlib  xz  tk  openssl  python-pipx  pycharm-professional  python-black  python-aiohttp  python-isort  python-pandas
 FLUTTER=flutter  dart  android-sdk
@@ -9,18 +10,18 @@ FLUTTER=flutter  dart  android-sdk
 ART=blender  inkscape
 
 GAMING=lutris-git  wine-ge-custom  proton-ge-custom  steam-native-runtime  heroic-games-launcher-bin  mangohud-git  gamemode  dxvk-async-git
-AUTHOR_PERSONAL=via  it87-dkms-git
+AUTHOR_PERSONAL=it87-dkms-git
 
 # post-pacman components
 CHAOTIC_AUR_SETUP=sh add_chaotic_aur.sh
 DEVOPS_SETUP=sudo usermod -aG docker ${USER}  &&  printf "{\n  "storage-driver": "overlay2"\n}" | sudo tee /etc/docker/daemon.json
-FLUTTER_SETUP=git config --global --add safe.directory /opt/flutter  &&  sudo usermod -aG flutterusers ${USER}
+FLUTTER_SETUP=git config --global --add safe.directory /opt/flutter  &&  sudo usermod -aG flutterusers ${USER}  &&  echo export CHROME_EXECUTABLE=chromium >> ~/.bashrc
 PYTHON_SETUP=pipx install poetry
 PERSONAL_SETUP=echo it87 | sudo tee /etc/modules-load.d/it87.conf
 
 
 full:
-	sudo pacman -Sy --needed $(BASE) $(CODE) $(DEVOPS) $(PYTHON) $(FLUTTER) $(ART) $(GAMING) && \
+	sudo pacman -Sy --needed $(BASE) $(PC_HOBY) $(CODE) $(DEVOPS) $(PYTHON) $(FLUTTER) $(ART) $(GAMING) && \
 	$(FLUTTER_SETUP) && \
 	$(PYTHON_SETUP)
 
@@ -29,6 +30,9 @@ fullp:
 	$(FLUTTER_SETUP) && \
 	$(PYTHON_SETUP) && \
 	$(PERSONAL_SETUP)
+
+hoby:
+	sudo pacman -Sy --needed $(BASE) $(PC_HOBY)
 
 dev:
 	sudo pacman -Sy --needed $(BASE) $(CODE) $(DEVOPS) $(PYTHON) $(FLUTTER) && \
@@ -40,7 +44,7 @@ py:
 	$(PYTHON_SETUP)
 
 gamer:
-	sudo pacman -Sy --needed $(BASE) $(GAMING)
+	sudo pacman -Sy --needed $(BASE) $(GAMING) $(PC_HOBY)
 
 chaotic:
 	$(CHAOTIC_AUR_SETUP)
