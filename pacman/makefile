@@ -5,7 +5,7 @@ PC_HOBY=via
 TEX=texlive-bin  texlive-core  texlive-bibtexextra  texlive-fontsextra  texlive-latexextra  texlive-science  texlive-latexextra  texstudio  biber
 FLUTTER=flutter  dart  android-sdk
 
-CODE=codium  jq  ninja  cmake  openapi-generator
+CODE=codium  jq  ninja  cmake  openapi-generator  github-cli
 DEVOPS=terraform  kubectl  kubectx  docker  go  fuse-overlayfs  lens
 PYTHON=pyenv  zlib  xz  tk  openssl  python-pipx  pycharm-professional  python-black  python-aiohttp  python-isort  python-pandas
 WRITER=libreoffice-fresh  $(TEX)
