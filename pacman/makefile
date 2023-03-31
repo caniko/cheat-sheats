@@ -1,16 +1,17 @@
 # pacman components
-BASE=ungoogled-chromium  element-desktop-nightly-bin  qbittorrent-enhanced-git  octopi-git  fancontrol-gui  xdman
+BASE=brave-bin  element-desktop-nightly-bin  qbittorrent-enhanced-git  octopi  fancontrol-gui-git  xdman
 PC_HOBY=via
+
+TEX=texlive-bin  texlive-core  texlive-bibtexextra  texlive-fontsextra  texlive-latexextra  texlive-science  texlive-latexextra  texstudio  biber
+FLUTTER=flutter  dart  android-sdk
 
 CODE=codium  jq  ninja  cmake  openapi-generator
 DEVOPS=terraform  kubectl  kubectx  docker  go  fuse-overlayfs  lens
 PYTHON=pyenv  zlib  xz  tk  openssl  python-pipx  pycharm-professional  python-black  python-aiohttp  python-isort  python-pandas
-TEX=texlive-bin  texlive-core  texlive-bibtexextra  texlive-fontsextra  texlive-latexextra  texlive-science  texlive-latexextra  texstudio  biber
-FLUTTER=flutter  dart  android-sdk
-
+WRITER=libreoffice-fresh  $(TEX)
 ART=blender  inkscape
 
-GAMING=lutris-git  wine-ge-custom  proton-ge-custom  steam-native-runtime  heroic-games-launcher-bin  mangohud-git  gamemode  dxvk-async-git
+GAMING=lutris  wine-ge-custom  proton-ge-custom  steam-native-runtime  heroic-games-launcher-bin  mangohud-git  gamemode  dxvk-async-git
 AUTHOR_PERSONAL=it87-dkms-git
 
 # post-pacman components
@@ -22,7 +23,7 @@ PERSONAL_SETUP=echo it87 | sudo tee /etc/modules-load.d/it87.conf
 
 
 full:
-	sudo pacman -Sy --needed $(BASE) $(PC_HOBY) $(CODE) $(DEVOPS) $(PYTHON) $(FLUTTER) $(ART) $(GAMING) && \
+	sudo pacman -Sy --needed $(BASE) $(PC_HOBY) $(CODE) $(DEVOPS) $(PYTHON) $(FLUTTER) $(ART) $(WRITER) && \
 	$(FLUTTER_SETUP) && \
 	$(PYTHON_SETUP) && \
 	$(DEVOPS_SETUP)
